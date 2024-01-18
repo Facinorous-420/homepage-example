@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:nightly
+    container_name: homepage
+    ports:
+      - 7000:3000
+    volumes:
+      - ./config:/app/config
+      - ./icons:/app/public/icons
+      - ./images:/app/public/images
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+    env_file:
+      - .env
+networks: {}

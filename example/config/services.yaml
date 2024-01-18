@@ -1,0 +1,391 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services/
+
+# /////////////////////////////////////// HOME TAB
+
+- Wealth & Finances:
+    - CoinMarketCap:
+        href: {{HOMEPAGE_VAR_COINMARKETCAP_DOMAIN}}
+        icon: bitcoin
+        description: Coin Market Cap crypto currency tracking
+        widget:
+            type: coinmarketcap
+            currency: CAD
+            defaultinterval: 24h
+            symbols: [BTC, ETH, HNS, SC]
+            key: {{HOMEPAGE_VAR_COINMARKETCAP_APIKEY}}
+    - YNAB Budget:
+        href: {{HOMEPAGE_VAR_YNAB_DOMAIN}}
+        icon: ynab
+        description: Budgeting software
+    - Ghostfolio:
+        href: {{HOMEPAGE_VAR_GHOSTFOLIO_DOMAIN}}
+        icon: ghostfolio
+        description: Crypto wealth management software
+
+- Calendar1:
+   - Media Release Dates:
+        name:
+        widget:
+          type: calendar
+          firstDayInWeek: sunday
+          view: monthly
+          maxEvents: 5
+          showTime: true
+          integrations:
+            - type: sonarr
+              service_group: Downloads & DVR
+              service_name: Sonarr
+              params:
+                unmonitored: true
+            - type: radarr
+              service_group: Downloads & DVR
+              service_name: Radarr
+              params:
+                unmonitored: true
+                
+- Apps:
+    - Vaultwarden:
+        href: {{HOMEPAGE_VAR_VAULTWARDEN_DOMAIN}}
+        icon: vaultwarden
+        description: Vaultwarden password manager
+    - Dick:
+        href: {{HOMEPAGE_VAR_DICK_DOMAIN}}
+        icon: /icons/eggplant.png
+        description: DICK, frontend for picture sharing service ASS
+    - Gitea:
+        href: {{HOMEPAGE_VAR_GITEA_DOMAIN}}
+        icon: gitea
+        description: Gitea For Local Git Projects
+    - IT-Tools:
+        href: {{HOMEPAGE_VAR_ITTOOLS_DOMAIN}}
+        icon: it-tools
+        description: Internet swiss army knife
+    - Paperless:
+        href: {{HOMEPAGE_VAR_PAPERLESS_DOMAIN}}
+        icon: paperless-ng
+        description: Personal documents archive
+    - Immich:
+        href: {{HOMEPAGE_VAR_IMMICH_DOMAIN}}
+        icon: immich
+        description: Photo and video archive
+
+
+# /////////////////////////////////////// MEDIA TAB
+
+
+- Media:
+    - Overseerr:
+        href: {{HOMEPAGE_VAR_OVERSEERR_DOMAIN}}
+        icon: overseerr
+        description: Media Requests
+        server: nas1
+        container: overseerr
+        widget:
+             type: overseerr
+             url: {{HOMEPAGE_VAR_OVERSEERR_DOMAIN}}
+             key: {{HOMEPAGE_VAR_OVERSEERR_APIKEY}}
+    - Jellyfin:
+        href: {{HOMEPAGE_VAR_JELLYFIN_DOMAIN}}
+        icon: jellyfin
+        description: Jellyfin Media Center
+        server: nas1
+        container: plex
+        widget:
+            type: jellyfin
+            url: {{HOMEPAGE_VAR_JELLYFIN_DOMAIN}}
+            key: {{HOMEPAGE_VAR_JELLYFIN_APIKEY}}
+            fields: ['series', 'movies']
+            enableBlocks: true
+            enableNowPlaying: true
+    - Plex:
+        href: {{HOMEPAGE_VAR_PLEX_DOMAIN}}
+        icon: plex
+        description: Plex Media Center
+        server: nas1
+        container: plex
+        widget:
+            type: plex
+            url: {{HOMEPAGE_VAR_PLEX_DOMAIN}}
+            key: {{HOMEPAGE_VAR_PLEX_APIKEY}}
+            fields: ['tv', 'movies']
+    - Tautulli:
+        href: {{HOMEPAGE_VAR_TAUTULLI_DOMAIN}}
+        icon: tautulli
+        description: Plex Monitoring
+        server: nas1
+        container: tautulli
+        widget:
+             type: tautulli
+             url: {{HOMEPAGE_VAR_TAUTULLI_DOMAIN}}
+             key: {{HOMEPAGE_VAR_TAUTULLI_APIKEY}}
+
+- Calendar2:
+   - Media Release Dates:
+        name:
+        widget:
+          type: calendar
+          firstDayInWeek: sunday
+          view: monthly
+          maxEvents: 5
+          showTime: true
+          integrations:
+            - type: sonarr
+              service_group: Downloads & DVR
+              service_name: Sonarr
+              params:
+                unmonitored: true
+            - type: radarr
+              service_group: Downloads & DVR
+              service_name: Radarr
+              params:
+                unmonitored: true
+
+- Downloads & DVR:
+    - Sonarr:
+        href: {{HOMEPAGE_VAR_SONARR_DOMAIN}}
+        icon: sonarr
+        description: Series PVR
+        server: nas1
+        container: sonarr-1080p
+        widget:
+             type: sonarr
+             url: {{HOMEPAGE_VAR_SONARR_DOMAIN}}
+             key: {{HOMEPAGE_VAR_SONARR_APIKEY}}
+    - Radarr:
+        href: {{HOMEPAGE_VAR_RADARR_DOMAIN}}
+        icon: radarr
+        description: Movies PVR
+        server: nas1
+        container: radarr-1080p
+        widget:
+             type: radarr
+             url: {{HOMEPAGE_VAR_RADARR_DOMAIN}}
+             key: {{HOMEPAGE_VAR_RADARR_APIKEY}}
+    - Prowlarr:
+        href: {{HOMEPAGE_VAR_PROWLARR_DOMAIN}}
+        icon: prowlarr
+        description: Indexer Manager
+        server: nas1
+        container: prowlarr
+        widget:
+             type: prowlarr
+             url: {{HOMEPAGE_VAR_PROWLARR_DOMAIN}}
+             key: {{HOMEPAGE_VAR_PROWLARR_APIKEY}}
+    - qBittorrent:
+        href: {{HOMEPAGE_VAR_QBIT_DOMAIN}}
+        icon: qbittorrent
+        description: Torrent Downloads
+        server: nas1
+        container: binhex-qbittorrentvpn
+        widget:
+             type: qbittorrent
+             url: {{HOMEPAGE_VAR_QBIT_DOMAIN}}
+             username: {{HOMEPAGE_VAR_QBIT_USERNAME}}
+             password: {{HOMEPAGE_VAR_QBIT_PASSWORD}}
+
+- Podcasts:
+    - Audio Bookshelf:
+        href: {{HOMEPAGE_VAR_AUDIOBOOKSHELF_DOMAIN}}
+        icon: audiobookshelf
+        description: Podcast downloads & listening
+        server: nas1
+        container: audiobookshelf
+        widget:
+            type: audiobookshelf
+            url: {{HOMEPAGE_VAR_AUDIOBOOKSHELF_DOMAIN}}
+            key: {{HOMEPAGE_VAR_AUDIOBOOKSHELF_APIKEY}}
+            fields: ['podcasts']
+
+
+# /////////////////////////////////////// APPS TAB
+
+
+- Project Management:
+    - Gitea:
+        href: {{HOMEPAGE_VAR_GITEA_DOMAIN}}
+        icon: gitea
+        description: Gitea For Local Git Projects
+        server: docker1
+        container: gitea
+    - DrawIO:
+        href: {{HOMEPAGE_VAR_DRAWIO_DOMAIN}}
+        icon: draw
+        description: Diagram creation
+        server: docker1
+        container: drawio
+
+
+- File Sharing:
+    - Hastebin:
+        href: {{HOMEPAGE_VAR_HASTEBIN_DOMAIN}}
+        icon: /icons/pastebin.png
+        description: Hastebin, a text sharing pastebin
+        server: docker1
+        container: hastebin
+    - Dick:
+        href: {{HOMEPAGE_VAR_DICK_DOMAIN}}
+        icon: /icons/eggplant.png
+        description: DICK, frontend for picture sharing service ASS
+
+- Archival:
+    - ArchiveBox:
+        href: {{HOMEPAGE_VAR_ARCHIVEBOX_DOMAIN}}
+        icon: archivebox
+        description: Website archiving
+        server: docker2
+        container: archivebox
+    - Paperless:
+        href: {{HOMEPAGE_VAR_PAPERLESS_DOMAIN}}
+        icon: paperless-ng
+        description: Personal documents archive
+        server: nas2
+        container: paperless
+    - Immich:
+        href: {{HOMEPAGE_VAR_IMMICH_DOMAIN}}
+        icon: immich
+        description: Photo and video archive
+        server: nas2
+        container: immich_server
+
+- Finances:
+    - Ghostfolio:
+        href: {{HOMEPAGE_VAR_GHOSTFOLIO_DOMAIN}}
+        icon: ghostfolio
+        description: Wealth management software
+        server: docker2
+        container: ghostfolio
+    - Wallos:
+        href: {{HOMEPAGE_VAR_WALLOS_DOMAIN}}
+        icon: wallos
+        description: Subscription management software
+        server: docker2
+        container: wallos
+
+- Misc:
+    - Vaultwarden:
+        href: {{HOMEPAGE_VAR_VAULTWARDEN_DOMAIN}}
+        icon: vaultwarden
+        description: Vaultwarden password manager
+        server: docker2
+        container: vaultwarden
+    - IT-Tools:
+        href: {{HOMEPAGE_VAR_ITTOOLS_DOMAIN}}
+        icon: it-tools
+        description: Internet swiss army knife
+        server: docker1
+        container: it-tools
+
+
+# /////////////////////////////////////// MANAGEMENT TAB
+
+
+- Networking:
+    - Unifi Web Console:
+        href: {{HOMEPAGE_VAR_UNIFICONSOLE_DOMAIN}}
+        icon: unifi
+        description: Public network management
+    - Juniper Web Console:
+        href: {{HOMEPAGE_VAR_JUNIPERCONSOLE_DOMAIN}}
+        icon: /icons/juniper.png
+        description: Trusted network management
+        
+- System Automation:
+    - Home Assistant:
+        href: {{HOMEPAGE_VAR_HOMEASSISTANT_DOMAIN}}
+        icon: home-assistant
+        description: Home IOT automation
+        server: auto1
+        container: homeassistant
+    - Rundeck:
+        href: {{HOMEPAGE_VAR_RUNDECK_DOMAIN}}
+        icon: rundeck
+        description: Anisible automation
+        server: docker2
+        container: rundeck
+
+- System Management:
+    - Public NAS:
+        href: {{HOMEPAGE_VAR_PUBLICNAS_DOMAIN}}
+        icon: unraid
+        description: System & container management for P-NAS-H
+    - Trusted NAS:
+        href: {{HOMEPAGE_VAR_TRUSTEDNAS_DOMAIN}}
+        icon: cockpit
+        description: System management for T-NAS-H
+    - ESXi:
+        href: {{HOMEPAGE_VAR_VMBOX_DOMAIN}}
+        icon: /icons/esxi.png
+        description: VM management
+    - Authentik:
+        href: {{HOMEPAGE_VAR_AUTHENTIK_DOMAIN}}
+        icon: authentik
+        description: SSO For Apps
+        server: docker2
+        container: authentik
+
+- Docker Management:
+    - Public Apps Dockge:
+        href: {{HOMEPAGE_VAR_PUBLICAPPDOCKGE_DOMAIN}}
+        icon: /icons/dockge.svg
+        description: Containers hosted on P-APPS-VM
+        server: docker1
+        container: dockge
+    - Trusted Apps Dockge:
+        href: {{HOMEPAGE_VAR_TRUSTEDAPPDOCKGE_DOMAIN}}
+        icon: /icons/dockge.svg
+        description: Containers hosted on T-APPS-VM
+        server: docker2
+        container: dockge
+    - Public Websites Dockge:
+        href: {{HOMEPAGE_VAR_PUBLICWEBDOCKGE_DOMAIN}}
+        icon: /icons/dockge.svg
+        description: Containers hosted on P-WEB-VM
+        server: nas2
+        container: dockge
+    - Trusted NAS Apps Dockge:
+        href: {{HOMEPAGE_VAR_TRUSTEDNASDOCKGE_DOMAIN}}
+        icon: /icons/dockge.svg
+        description: Containers hosted on T-NAS-H
+        server: nas2
+        container: dockge
+    - Public NAS Host:
+        href: {{HOMEPAGE_VAR_PUBLICNASDOCKER_DOMAIN}}
+        icon: unraid
+        description: Containers hosted on P-NAS-H
+
+- Code:
+    - Public Apps VM:
+        href: {{HOMEPAGE_VAR_PUBLICAPPCODE_DOMAIN}}
+        icon: vscode
+        description: VSCode to edit files on P-APPS-VM
+        server: docker1
+        container: code-server
+    - Trusted Apps VM:
+        href: {{HOMEPAGE_VAR_TRUSTEDAPPCODE_DOMAIN}}
+        icon: vscode
+        description: VSCode to edit files on T-APPS-VM
+        server: docker2
+        container: code-server
+    - Public Websites VM:
+        href: {{HOMEPAGE_VAR_PUBLICWEBCODE_DOMAIN}}
+        icon: vscode
+        description: VSCode to edit files on P-WEB-VM
+        server: web1
+        container: code-server
+    - Trusted NAS Host:
+        href: {{HOMEPAGE_VAR_TRUSTEDNASCODE_DOMAIN}}
+        icon: vscode
+        description: VSCode to edit files on T-NAS-H
+        server: nas2
+        container: code-server
+    - Public NAS Host:
+        href: {{HOMEPAGE_VAR_PUBLICNASCODE_DOMAIN}}
+        icon: vscode
+        description: VSCode to edit files on P-NAS-H
+        server: nas1
+        container: code-server
+
+# ///////////////////////////////////////
+

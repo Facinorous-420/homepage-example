@@ -1,0 +1,24 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/docker/
+
+docker1:
+  host: 10.10.0.101
+  port: 2375
+
+docker2:
+  host: 10.10.1.101
+  port: 2375
+
+nas1:
+  host: 10.10.0.20
+  port: 2375
+
+nas2:
+  host: 10.10.1.20
+  port: 2375
+
+web1:
+  host: 10.10.0.100
+  port: 2375
+

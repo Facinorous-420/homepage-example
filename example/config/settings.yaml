@@ -1,0 +1,142 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings/
+
+title: Cloudchain Dashboard
+favicon: /images/logo.png
+background: 
+  image: /images/background.gif
+  blur: md # sm, "", md, xl
+  opacity: 50 # 0-100
+
+headerStyle: clean
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  hideVisitURL: true
+
+fiveColumns: true
+useEqualHeights: true
+hideVersion: true
+#hideErrors: true
+
+# /////////////////////////////////////// HOME TAB
+
+layout:
+
+  Wealth & Finances:
+    tab: Home
+    header: false
+
+  Calendar1:
+    tab: Home
+    header: false
+
+  Apps:
+    tab: Home
+    header: false
+
+  ㅤ:
+    tab: Home
+    style: row
+    columns: 2
+
+  Social:
+    tab: Home
+  Shopping:
+    tab: Home
+  Hobbies:
+    tab: Home
+  Development:
+    tab: Home
+  Anichiraku:
+    tab: Home
+    
+# /////////////////////////////////////// MEDIA & DOWNLOADS TAB
+
+  Media:
+    tab: Media & Downloads
+    header: false
+
+  Calendar2:
+    tab: Media & Downloads
+    header: false
+
+  Downloads & DVR:
+    tab: Media & Downloads
+    header: false
+
+  Podcasts:
+    tab: Media & Downloads
+    header: false
+    style: row
+    columns: 1
+    
+  ㅤㅤ:
+    tab: Media & Downloads
+    style: row
+    columns: 4
+  
+  Public Trackers:
+    tab: Media & Downloads
+
+  Private Trackers:
+    tab: Media & Downloads
+    
+# /////////////////////////////////////// APPS TAB
+
+  Project Management:
+    tab: Apps
+    header: true
+  File Sharing:
+    tab: Apps
+    header: true
+  Archival:
+    tab: Apps
+    header: true
+  Finances:
+    tab: Apps
+    header: true
+  Misc:
+    tab: Apps
+    header: true
+
+# /////////////////////////////////////// MANAGEMENT TAB
+
+  Networking:
+    tab: Management
+    header: trusted
+    style: row
+    columns: 2
+
+  System Automation:
+    tab: Management
+    header: true
+    style: row
+    columns: 2
+
+  System Management:
+    tab: Management
+    header: true
+    style: row
+    columns: 4
+
+  Docker Management:
+    tab: Management
+    header: true
+
+  Code:
+    tab: Management
+    header: true
+
+  ㅤㅤㅤ:
+    tab: Management
+    header: false
+    style: row
+    columns: 2
+
+  Documentation:
+    tab: Management
+
+    # ///////////////////////////////////////

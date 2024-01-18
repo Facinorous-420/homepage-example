@@ -1,0 +1,16 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/widgets/info/
+
+- logo:
+    icon: /images/logo.png
+- greeting:
+    text_size: md
+    text: Cloudchain Dashboard
+    
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: long
+      timeStyle: short
+      hour12: true
