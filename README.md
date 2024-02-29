@@ -17,8 +17,7 @@
 <!------------------------- GETTING STARTED ------------------------->
 
 <h2 align="center"><b>Prerequisites</b></h2>
-Satania uses MongoDB as the database backend and will need to be setup before the bot can be run.
-<br/><br/>
+This project uses the Homepage application.<br/><br/>
 
 1. `Docker Compose` - [Please Read](https://gethomepage.dev/latest/installation/docker/)
 
